@@ -268,13 +268,62 @@
             <p>Хороший интернет-магазин отличается от плохого не только ценами!</p>
             <p>Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
           </div>
-          <div class="services-slides slider">
+          <div class="services-slides">
             <div class="services-button-wrapper">
-              <input class="service-btn service-btn-active" type="button" id="slide-1" value="Доставка">
-              <input class="service-btn " type="button" id="slide-2" value="Гарантия">
-              <input class="service-btn " type="button" id="slide-3" value="Кредит">
+              <input class="services-btn services-btn-active" type="button" id="slide-1" value="Доставка">
+              <input class="services-btn" type="button" id="slide-2" value="Гарантия">
+              <input class="services-btn" type="button" id="slide-3" value="Кредит">
+            </div>
+            <div class="services-slide services-slide-1 slide-active">
+              <h2>Доставка</h2>
+              <p>Мы с удовольствием доставим ваш товар прямо<br> к вашему подъезду совершенно бесплатно!</p>
+              <p>Ведь мы неплохо заработаем,<br> поднимая его на ваш этаж!</p>
+            </div>
+            <div class="services-slide services-slide-2">
+              <h2>Гарантия</h2>
+              <p>Если купленный у нас товар поломается или заискрит,<br> а также в случае пожара, спровоцированного его возгаранием,<br> вы всегда можете быть уверены в
+              нашей гарантии. Мы обменяем <br>сгоревший товар на новый.</p>
+              <p>Дом уж восстановите как-нибудь сами.</p>
+            </div>
+            <div class="services-slide services-slide-3">
+              <h2>Кредит</h2>
+              <p>Залезть в долговую яму стало проще!</p>
+              <p>Кредитные консультанты придут вам на помощь.</p>
+              <a class="credit-btn button-link" href="#">Отправить заявку</a>
             </div>
           </div>
+        </div>
+      </section>
+      <section class="about container">
+        <div class="about-info about-container">
+          <h2>Компания «Техномарт»</h2>
+          <p>Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и<br> строительства не оставит равнодушными любителей сэкономить на гастарбайтерах.</p>
+          <p class="about-text">Мы можем доставить ваш товар в самые отдаленные точки России!<br> Техномарт работает со многими транспортными компаниями:</p>
+          <ul class="about-list">
+            <li class="about-list-item">Деловые линии</li>
+            <li class="about-list-item">Автотрейдинг</li>
+            <li class="about-list-item">ЖелДорЭкспедиция</li>
+          </ul>
+          <a class="about-btn button-link" href="#">Подробнее о компании</a>
+        </div>
+        <div class="about-contacts about-container">
+          <h2>Контакты</h2>
+          <p class="contacts-text">Вы можете забрать товар сами,<br> заехав в наш офис:</p>
+          <div class="map-container">
+            <button class="map-btn" type="button">
+              <img src="img/map.jpg" width="300" height="158" alt="Б. Конюшенная ул., д. 19">
+            </button>
+            <div class="modal-map">
+              <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.5991043651586!2d30.320894616097!3d59.938794181876254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkxMTg2!5e0!3m2!1sru!2sru!4v1524218232719" width="940" height="446" allowfullscreen></iframe> -->
+              <p>
+                <img src="img/map-full.jpg" width="941" height="446">
+              </p>
+              <button class="modal-close close-btn" type="button">
+                <span class="visually-hidden">Закрыть карту</span>
+              </button>
+            </div>
+          </div>
+          <button class="contacts-btn button-link" type="button">Заблудились? Напишите нам!</button>
         </div>
       </section>
 
@@ -282,5 +331,6 @@
     <footer>
 
     </footer>
+    <script src="js/script.js"></script>
   </body>
 </html>
