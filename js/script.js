@@ -6,9 +6,14 @@ var keyCodes = {
   SPACE: 27
 };
 
-var openMapButton = document.querySelector('.map-btn');
+// модальные окна
+
 var modalMap = document.querySelector('.modal-map');
-var closeMapButton = modalMap.querySelector('.close-btn');
+var modalContacts = document.querySelector('.modal-contacts');
+var openMapButton = document.querySelector('.map-btn');
+var openContactsButton = document.querySelector('.contacts-btn');
+var closeMapButton = modalMap.querySelector('.close-map-btn');
+var closeContactsButton = modalContacts.querySelector('.close-contacts-btn');
 var servicesSlides = document.querySelector('.services-slides');
 var slideButtonOne = servicesSlides.querySelector('#slide-1');
 var slideButtonTwo = servicesSlides.querySelector('#slide-2');
@@ -22,24 +27,47 @@ var slides = [servicesSlideOne, servicesSlideTwo, servicesSlideThree];
 
 var slideButtonActive = 'services-btn-active';
 var slideActive = 'slide-active';
-var mapActive = 'element-active';
+var elementActive = 'element-active';
+
+// открытие/закрытие карты
 
 openMapButton.addEventListener('click', function() {
-  modalMap.classList.add(mapActive);
+  modalMap.classList.add(elementActive);
 });
 
 window.addEventListener('keydown', function(evt) {
   if (evt.keyCode === keyCodes.ESC) {
     evt.preventDefault();
-    if (modalMap.classList.contains(mapActive)) {
-      modalMap.classList.remove(mapActive);
+    if (modalMap.classList.contains(elementActive)) {
+      modalMap.classList.remove(elementActive);
     }
   }
 });
 
 closeMapButton.addEventListener('click', function() {
-  modalMap.classList.remove(mapActive);
+  modalMap.classList.remove(elementActive);
 });
+
+// открытие/закрытие формы обратной связи
+
+openContactsButton.addEventListener('click', function() {
+  modalContacts.classList.add(elementActive);
+});
+
+window.addEventListener('keydown', function(evt) {
+  if (evt.keyCode === keyCodes.ESC) {
+    evt.preventDefault();
+    if (modalContacts.classList.contains(elementActive)) {
+      modalContacts.classList.remove(elementActive);
+    }
+  }
+});
+
+closeContactsButton.addEventListener('click', function() {
+  modalContacts.classList.remove(elementActive);
+});
+
+// работа слайдеров
 
 var resetSlider = function () {
   slideButtons.forEach(function (button) {
