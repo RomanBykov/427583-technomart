@@ -10,7 +10,7 @@ body {
   color: #283136;
 
   background-color: #ffffff;
-  /* background-image: url("../img/technomart-index-writeus.jpg"); */
+  /* background-image: url("../img/catalog.jpg"); */
   background-repeat: no-repeat;
   background-position-x: center;
 }
@@ -201,7 +201,7 @@ input[type="radio"].visually-hidden {
 .header-top-list .header-search {
   position: relative;
 
-  width: 216px;
+  width: 286px;
   margin: 0;
   padding: 0;
   padding-top: 12px;
@@ -328,6 +328,7 @@ input[type="radio"].visually-hidden {
   color: #000000;
 
   background-color: #ffffff;
+  /* outline: 1px solid yellow; */
 }
 
 .header-login-list a:hover {
@@ -1730,4 +1731,207 @@ input[type="radio"].visually-hidden {
 
 .feedback-first-col {
   margin-right: 54px;
+}
+
+/* ================================================================================================================================================================================== */
+/* =============================================================================== Страница каталога ================================================================================ */
+/* ================================================================================================================================================================================== */
+
+.filters-section {
+  font-family: "PT Sans", Arial, sans-serif;
+  font-weight: 400;
+  color: #000000;
+  /* color: tomato; */
+  text-transform: uppercase;
+}
+
+.breadcrumbs {
+  display: flex;
+  margin: 0;
+  padding: 20px 0;
+
+  list-style: none;
+
+  /* outline: 1px solid blue; */
+}
+
+.breadlink {
+  position: relative;
+
+  display: block;
+  margin: 0;
+  padding: 0;
+  margin-right: 40px;
+
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #000000;
+  /* color: red; */
+  text-transform: uppercase;
+  font-weight: 400;
+  /* background-color: rgba(255, 255, 0, 0.3); */
+}
+
+.breadlink::before {
+  position: absolute;
+  top: 4.5px;
+  left: -27px;
+
+  width: 7px;
+  height: 7px;
+
+  border: 2px solid #d0d4da;
+  border-left: none;
+  border-bottom: none;
+  border-radius: 2px;
+  transform: rotate(45deg);
+
+  background-color: transparent;
+  content: "";
+}
+
+.homelink {
+  position: relative;
+
+  margin-right: 55px;
+}
+
+.homelink::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 15px;
+  height: 15px;
+
+  background-image: url("../img/svg/icon-home.svg");
+  background-repeat: no-repeat;
+  background-position: -2px 2px;
+
+  content: "";
+}
+
+.catalog-header {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 31px;
+  padding-left: 27px;
+
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #32425c;
+
+  background-color: #f2f6f8;
+  /* outline: 1px solid red; */
+}
+
+.filter-header-wrapper {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.header-container {
+  flex-shrink: 0;
+  width: 184px;
+  margin: 0;
+  margin-right: 20px;
+  padding: 8px 19px;
+  padding-right: 16px;
+  padding-bottom: 9px;
+  /* outline: 1px solid yellow; */
+  background-color: #f7f3ec;
+}
+
+.filter-header {
+  margin: 0;
+  margin-right: 140px;
+  padding: 0;
+
+  font-size: 13px;
+  line-height: 18px;
+
+  /* font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #000000;
+  text-transform: uppercase; */
+}
+
+.sort-container {
+  display: flex;
+  width: 666px;
+  /* outline: 1px solid green; */
+}
+
+.sort-list {
+  display: flex;
+  justify-content: space-between;
+  width: 355px;
+  margin: 0;
+  margin-right: auto;
+  padding: 0;
+
+  list-style: none;
+
+  /* outline: 1px solid red; */
+}
+
+.sort-link {
+  /* margin-right: 67px; */
+
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.3);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: #ee3643;
+}
+
+.sort-link:hover,
+.sort-link:focus {
+  color: #000000;
+  text-decoration-style: solid;
+}
+
+.sort-link-active {
+  color: #ee3643;
+  text-decoration: none;
+}
+
+.sort-btn-list {
+  display: flex;
+  justify-content: space-between;
+  width: 43px;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+  /* outline: 1px solid green; */
+}
+
+.sort-btn path {
+  opacity: 0.3;
+}
+
+.sort-btn:hover path,
+.sort-btn:focus path {
+  opacity: 1;
+}
+
+.sort-btn-active path {
+  fill: #ee3643;
+
+  opacity: 1;
+}
+
+.catalog-filter-container {
+  /* outline: 1px solid purple; */
 }
