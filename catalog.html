@@ -153,12 +153,37 @@
                 <div class="range-toggle range-toggle-max"></div>
               </div>
             </div>
-            <label class="price min-price">от
-              <input class="range-input" type="text" name="range-min" value="0" size="5">
+            <label class="price">
+              <input class="range-input" type="number" name="range-min" value="0" size="5">
             </label>
-            <label class="price max-price">до
-              <input class="range-input range-input-max" type="text" name="range-max" value="15 000" size="5">
+            <label>
+              <input class="range-input range-input-max" type="number" name="range-max" value="30000" size="5">
             </label>
+          </fieldset>
+          <fieldset class="filter">
+            <legend class="filter-title">Производители</legend>
+            <ul class="filter-list">
+              <li class="filter-option filter-option-checkbox">
+                <input class="visually-hidden" type="checkbox" name="features-bosch" id="bosch-feature" checked>
+                <label for="bosch-feature">Bosch</label>
+              </li>
+              <li class="filter-option filter-option-checkbox">
+                <input class="visually-hidden" type="checkbox" name="features-interskol" id="interskol-feature">
+                <label for="interskol-feature">Интерскол</label>
+              </li>
+              <li class="filter-option filter-option-checkbox">
+                <input class="visually-hidden" type="checkbox" name="features-makita" id="makita-feature" checked>
+                <label for="makita-feature">Makita</label>
+              </li>
+              <li class="filter-option filter-option-checkbox">
+                <input class="visually-hidden" type="checkbox" name="features-dewalt" id="dewalt-feature">
+                <label for="dewalt-feature">Dewalt</label>
+              </li>
+              <li class="filter-option filter-option-checkbox">
+                <input class="visually-hidden" type="checkbox" name="features-hitachi" id="hitachi-feature">
+                <label for="hitachi-feature">Hitachi</label>
+              </li>
+            </ul>
           </fieldset>
         </form>
       </section>

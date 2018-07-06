@@ -10,7 +10,7 @@ body {
   color: #283136;
 
   background-color: #ffffff;
-  /* background-image: url("../img/catalog.jpg"); */
+  background-image: url("../img/catalog.jpg");
   background-repeat: no-repeat;
   background-position-x: center;
 }
@@ -899,7 +899,6 @@ input[type="radio"].visually-hidden {
 
 .popular-img {
   display: flex;
-  align-items: middle;
   justify-content: center;
   width: 218px;
   height: 168px;
@@ -989,7 +988,7 @@ input[type="radio"].visually-hidden {
 
 .popular-item:hover,
 .popular-item:focus {
-  box-shadow: 0 8px 25px 4px rgba(50, 66, 92, 0.3);
+  box-shadow: 0 8px 25px 4px rgba(50, 66, 92, 0.5);
 }
 
 .popular-item:hover .popular-actions {
@@ -1060,6 +1059,10 @@ input[type="radio"].visually-hidden {
 .popular-manufacturer,
 .manufacturer-logo {
   height: 144px;
+}
+
+.popular-img:active {
+  opacity: 0.3;
 }
 
 /* ========================================================================== СЕРВИСЫ СО СЛАЙДЕРОМ ================================================================================= */
@@ -1745,6 +1748,9 @@ input[type="radio"].visually-hidden {
   text-transform: uppercase;
 }
 
+
+/* =============================================================================== Хлебные крошки== =============================================== ================================= */
+
 .breadcrumbs {
   display: flex;
   margin: 0;
@@ -1812,9 +1818,12 @@ input[type="radio"].visually-hidden {
   content: "";
 }
 
+
+/* =============================================================================== Сортировка ======================================================================================= */
+
 .catalog-header {
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 19px;
   padding: 31px;
   padding-left: 27px;
 
@@ -1825,13 +1834,15 @@ input[type="radio"].visually-hidden {
   color: #32425c;
 
   background-color: #f2f6f8;
-  /* outline: 1px solid red; */
 }
 
 .filter-header-wrapper {
   display: flex;
   margin: 0;
+  margin-bottom: 20px;
   padding: 0;
+
+  /* outline: 1px solid red; */
 }
 
 .header-container {
@@ -1895,15 +1906,17 @@ input[type="radio"].visually-hidden {
   text-decoration-color: #ee3643;
 }
 
-.sort-link:hover,
-.sort-link:focus {
-  color: #000000;
-  text-decoration-style: solid;
-}
-
 .sort-link-active {
   color: #ee3643;
   text-decoration: none;
+}
+
+.sort-link:hover,
+.sort-link:focus {
+  color: #000000;
+  text-decoration: underline;
+  text-decoration-color: #ee3643;
+  text-decoration-style: solid;
 }
 
 .sort-btn-list {
@@ -1921,17 +1934,256 @@ input[type="radio"].visually-hidden {
   opacity: 0.3;
 }
 
-.sort-btn:hover path,
-.sort-btn:focus path {
-  opacity: 1;
-}
-
 .sort-btn-active path {
   fill: #ee3643;
 
   opacity: 1;
 }
 
-.catalog-filter-container {
-  /* outline: 1px solid purple; */
+.sort-btn:hover path,
+.sort-btn:focus path {
+  fill: #231f20;
+
+  opacity: 1;
+}
+
+/* =============================================================================== Фильтры ========================================================================================= */
+
+.filter {
+  margin: 0;
+  padding: 0;
+
+  border: none;
+
+  /* outline: 1px solid blueviolet; */
+}
+
+.filter-range {
+  width: 220px;
+}
+
+.filter-title {
+  margin: 0;
+  margin-left: -1px;
+  margin-bottom: 20px;
+  padding: 0;
+
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 17px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.price-controls {
+  position: relative;
+
+  width: 220px;
+  height: 79px;
+  margin-bottom: 11px;
+
+  background-color: #f7f3ec;
+  border-radius: 3px;
+
+  /* outline: 1px solid green; */
+}
+
+.scale {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 180px;
+  height: 2px;
+
+  background-color: #d7dcde;
+
+  transform: translateX(-50%);
+}
+
+.scale::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 150px;
+  height: 2px;
+
+  background-color: #00ca74;
+
+  content: "";
+}
+
+.range-toggle {
+  position: absolute;
+  top: 30px;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 1px 0 #d7dcde;
+
+  cursor: pointer;
+}
+
+.range-toggle-min {
+  left: 18px;
+}
+
+.range-toggle-max {
+  left: 160px;
+}
+
+.range-toggle::after {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+
+  width: 4px;
+  height: 4px;
+
+  background-color: #ababab;
+  border-radius: 50%;
+
+  content: "";
+}
+
+.range-input {
+  width: 65px;
+  margin: 0;
+  margin-right: 26px;
+  padding: 9px 25px;
+  padding-right: 5px;
+  padding-bottom: 10px;
+
+  font: inherit;
+  font-size: 17px;
+  line-height: 18px;
+  text-align: center;
+
+  background-color: #f7f3ec;
+  /* background-color: transparent; */
+  border: none;
+  border-radius: 3px;
+  /* outline: 1px solid blue; */
+}
+
+.price {
+  position: relative;
+}
+
+.price::before {
+  position: absolute;
+  top: 9px;
+  left: 106px;
+
+  width: 9px;
+  height: 1px;
+
+  background-color: #000000;
+  box-shadow: -1px 0 0 0 #d8d8d8;
+
+  content: "";
+}
+
+.range-input-max {
+  position: relative;
+
+  margin-right: 0;
+  margin-bottom: 50px;
+}
+
+.price::after {
+  position: absolute;
+  bottom: -35px;
+  left: 0;
+
+  width: 220px;
+  height: 1px;
+
+  background-color: #e5e5e5;
+
+  content: "";
+}
+
+
+
+.filter-list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.filter-option {
+  margin: 0;
+  margin-bottom: 16px;
+  padding: 0;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  padding-left: 8px;
+}
+
+.filter-option label {
+  position: relative;
+
+  margin-left: 28px;
+
+  color: #283136;
+
+  opacity: 0.4;
+}
+
+.filter-option:hover label,
+.filter-option input:focus + label {
+  opacity: 1;
+}
+
+.filter-option label::before {
+  position: absolute;
+  top: -3px;
+  left: -35px;
+
+  width: 25px;
+  height: 25px;
+
+  background-image: url("../img/svg-nerds/radio-off.svg");
+  background-repeat: no-repeat;
+  background-size: auto;
+
+  content: "";
+}
+
+.filter-option input:checked:focus + label::before,
+.filter-option-checkbox input:focus + label::before {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+.filter-option input:disabled + label::before,
+.filter-option input:disabled + label::before {
+  opacity: 0.1;
+}
+
+.filter-option-last label::before {
+  display: none;
+}
+
+.filter-option input:checked + label::before {
+  background-image: url("../img/svg/radio-on.svg");
+}
+
+
+.filter-option-checkbox label::before {
+  background-image: url("../img/svg/checkbox-off.svg");
+}
+
+.filter-option-checkbox input:checked + label::before {
+  background-image: url("../img/svg/checkbox-on.svg");
+}
+
+.filter-features {
+  margin-bottom: 32px;
 }
