@@ -10,7 +10,7 @@ body {
   color: #283136;
 
   background-color: #ffffff;
-  background-image: url("../img/catalog.jpg");
+  /* background-image: url("../img/catalog.jpg"); */
   background-repeat: no-repeat;
   background-position-x: center;
 }
@@ -901,8 +901,9 @@ input[type="radio"].visually-hidden {
   display: flex;
   justify-content: center;
   width: 218px;
-  height: 168px;
-  margin-bottom: 10px;
+  height: 166px;
+  margin-bottom: 13px;
+  /* outline: 1px solid red; */
 }
 
 .popular-img img {
@@ -923,7 +924,7 @@ input[type="radio"].visually-hidden {
 .popular-price-old {
   min-height: 20px;
   margin: 0;
-  margin-bottom: 9px;
+  margin-bottom: 8px;
   padding: 0;
 
   color: #a9a9a9;
@@ -1741,10 +1742,11 @@ input[type="radio"].visually-hidden {
 /* ================================================================================================================================================================================== */
 
 .filters-section {
+  margin-bottom: 62px;
+
   font-family: "PT Sans", Arial, sans-serif;
   font-weight: 400;
   color: #000000;
-  /* color: tomato; */
   text-transform: uppercase;
 }
 
@@ -1949,6 +1951,10 @@ input[type="radio"].visually-hidden {
 
 /* =============================================================================== Фильтры ========================================================================================= */
 
+.catalog-wrapper {
+  display: flex;
+}
+
 .filter {
   margin: 0;
   padding: 0;
@@ -1956,6 +1962,12 @@ input[type="radio"].visually-hidden {
   border: none;
 
   /* outline: 1px solid blueviolet; */
+}
+
+.filter-form {
+  margin-right: 20px;
+
+  /* outline: 1px solid red; */
 }
 
 .filter-range {
@@ -2108,7 +2120,7 @@ input[type="radio"].visually-hidden {
   content: "";
 }
 
-
+/* ===================================================================== Фильтры с чек-боксами ====================================================================================== */
 
 .filter-list {
   margin: 0;
@@ -2119,41 +2131,67 @@ input[type="radio"].visually-hidden {
 
 .filter-option {
   margin: 0;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   padding: 0;
-  padding-bottom: 2px;
-  padding-top: 2px;
-  padding-left: 8px;
 }
 
 .filter-option label {
   position: relative;
 
-  margin-left: 28px;
+  margin-left: 34px;
 
-  color: #283136;
-
-  opacity: 0.4;
-}
-
-.filter-option:hover label,
-.filter-option input:focus + label {
-  opacity: 1;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #000000;
 }
 
 .filter-option label::before {
   position: absolute;
-  top: -3px;
+  top: -2px;
   left: -35px;
 
   width: 25px;
   height: 25px;
 
-  background-image: url("../img/svg-nerds/radio-off.svg");
+  background-image: url("../img/svg/radio-off.svg");
   background-repeat: no-repeat;
   background-size: auto;
 
   content: "";
+}
+
+.filter-option:hover label::before {
+  background-image: url("../img/svg/radio-off-hover.svg");
+}
+
+.filter-option input:checked + label::before {
+  background-image: url("../img/svg/radio-on.svg");
+}
+
+.filter-option input:checked:hover + label::before {
+  background-image: url("../img/svg/radio-on-hover.svg");
+}
+
+.filter-option-checkbox label::before {
+  background-image: url("../img/svg/checkbox-off.svg");
+}
+
+.filter-option-checkbox:hover label::before {
+  background-image: url("../img/svg/checkbox-off-hover.svg");
+}
+
+.filter-option-checkbox input:checked + label::before {
+  background-image: url("../img/svg/checkbox-on.svg");
+}
+
+.filter-option-checkbox input:checked:hover + label::before {
+  background-image: url("../img/svg/checkbox-on-hover.svg");
+}
+
+.filter-option input:disabled + label::before,
+.filter-option input:disabled + label::before {
+  opacity: 0.1;
 }
 
 .filter-option input:checked:focus + label::before,
@@ -2162,28 +2200,155 @@ input[type="radio"].visually-hidden {
   outline: 5px auto -webkit-focus-ring-color;
 }
 
-.filter-option input:disabled + label::before,
-.filter-option input:disabled + label::before {
-  opacity: 0.1;
+.filter-manufacturers {
+  position: relative;
+
+  margin-bottom: 27px;
 }
 
-.filter-option-last label::before {
-  display: none;
+.filter-manufacturers::after {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+
+  width: 220px;
+  height: 1px;
+
+  background-color: #e5e5e5;
+
+  content: "";
 }
 
-.filter-option input:checked + label::before {
-  background-image: url("../img/svg/radio-on.svg");
+.filter-power {
+  margin-bottom: 60px;
 }
 
+.button {
+  margin: 0;
+  padding: 9px 38px;
 
-.filter-option-checkbox label::before {
-  background-image: url("../img/svg/checkbox-off.svg");
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #000000;
+  text-transform: uppercase;
+
+  background-color: transparent;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
 }
 
-.filter-option-checkbox input:checked + label::before {
-  background-image: url("../img/svg/checkbox-on.svg");
+.filter-button {
+  padding: 9px 38px;
 }
 
-.filter-features {
-  margin-bottom: 32px;
+.button:hover {
+  border-color: #bdc6ca;
+}
+
+.button:active {
+  border-color: #ee3643;
+}
+
+.catalog-list {
+  justify-content: space-between;
+  margin-top: 2px;
+  margin-bottom: 33px;
+}
+
+.catalog-list .popular-item {
+  margin-right: 0;
+
+  font-weight: 700;
+  text-transform: none;
+}
+
+/* ============================================================================ Пагинатор ========================================================================================== */
+
+.paginator {
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.paginator a {
+  display: block;
+  margin-right: 9px;
+  padding: 9px 15px;
+
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  text-align: center;
+  color: #000000;
+  text-transform: uppercase;
+
+  background-color: transparent;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+}
+
+.paginator .paginator-next-page {
+  padding: 9px 31px;
+}
+
+.paginator .active-page {
+  color: #ffffff;
+
+  background-color: #ee3643;
+  border-color: #ee3643;
+}
+
+.paginator a:hover,
+.paginator a:focus {
+  color: #000000;
+
+  background-color:  transparent;
+  border-color: #bdc6ca;
+}
+
+.paginator a:active {
+  color: #000000;
+
+  background-color:  transparent;
+  border-color: #ee3643;
+}
+
+/* ============================================================================= О перфораторах ===================================================================================== */
+
+.about-product {
+  padding: 64px 0;
+  padding-bottom: 69px;
+
+  background-color: #f2f6f8;
+}
+
+.about-product h2 {
+  margin: 0;
+  margin-bottom: 26px;
+  padding: 0;
+
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #000000;
+  letter-spacing: 0.16px;
+}
+
+.about-product p {
+  margin: 0;
+  padding: 0;
+
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: 0.14px;
+}
+
+.about-product .about-product-text {
+  letter-spacing: 0.03px;
 }
