@@ -10,7 +10,7 @@ body {
   color: #283136;
 
   background-color: #ffffff;
-  /* background-image: url("../img/catalog.jpg"); */
+  /* background-image: url("../img/catalog-modal.jpg"); */
   background-repeat: no-repeat;
   background-position-x: center;
 }
@@ -945,6 +945,8 @@ input[type="radio"].visually-hidden {
 
   border-radius: 3px;
   background-color: #ee3643;
+
+  cursor: pointer;
 }
 
 .popular-price-new:hover,
@@ -996,7 +998,7 @@ input[type="radio"].visually-hidden {
   display: block;
 }
 
-.popular-actions a {
+.popular-actions button {
   display: block;
   width: 135px;
   margin: 0 auto;
@@ -1551,13 +1553,6 @@ input[type="radio"].visually-hidden {
   border-radius: 5px;
 }
 
-.element-active {
-  display: block;
-
-  transform: translate(-50%);
-  animation: open-popup 0.2s;
-}
-
 /* =================================================================================== Футэр ====================================================================================== */
 
 .footer-menu {
@@ -1829,6 +1824,7 @@ input[type="radio"].visually-hidden {
   padding: 31px;
   padding-left: 27px;
 
+  font-family: "Cuprum", Arial, sans-serif;
   font-size: 30px;
   line-height: 30px;
   font-weight: 400;
@@ -2251,16 +2247,20 @@ input[type="radio"].visually-hidden {
 }
 
 .catalog-list {
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-top: 2px;
   margin-bottom: 33px;
 }
 
 .catalog-list .popular-item {
-  margin-right: 0;
+  margin-right: 20px;
 
   font-weight: 700;
   text-transform: none;
+}
+
+.catalog-list .popular-item:nth-child(3n) {
+  margin-right: 0;
 }
 
 /* ============================================================================ Пагинатор ========================================================================================== */
@@ -2351,4 +2351,122 @@ input[type="radio"].visually-hidden {
 
 .about-product .about-product-text {
   letter-spacing: 0.03px;
+}
+
+.modal-order {
+  min-height: 275px;
+
+  top: 25%;
+
+  /* background-color: transparent; */
+  /* outline: 1px solid black; */
+  display: none;
+}
+
+.modal-order .modal-fieldset {
+  margin-top: 65px;
+  margin-bottom: 70px;
+  /* outline: 1px solid green; */
+}
+
+.modal-order h2 {
+  position: relative;
+
+  margin: 0;
+  margin-left: 100px;
+
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 30px;
+  line-height: 30px;
+  color: #000000;
+  font-weight: 400;
+  text-transform: none;
+  /* text-align: center; */
+}
+
+.modal-order h2::before {
+  position: absolute;
+  top: -16px;
+  left: -100px;
+
+  width: 66px;
+  height: 66px;
+
+  background-color: #63a63e;
+  border-radius: 50%;
+
+  content: "";
+}
+
+.modal-order h2::after {
+  position: absolute;
+  top: 4px;
+  left: -83px;
+
+  width: 28px;
+  height: 14px;
+
+  border: 7px solid #ffffff;
+  border-top: none;
+  border-right: none;
+
+  transform: rotate(-45deg);
+  content: "";
+}
+
+.order-btn {
+  display: block;
+  width: 220px;
+  height: 37px;
+  margin: 0 auto;
+  margin-top: 37px;
+  padding: 10px 0;
+
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 400;
+
+  background-color: #ee3643;
+  /* background-color: transparent; */
+  /* outline: 1px solid blue; */
+  border: none;
+  border-radius: 3px;
+}
+
+.continue-btn {
+  color: #000000;
+
+  background-color: #ffffff;
+}
+
+.continue-btn:hover,
+.continue-btn:focus {
+  color: #ee3643;
+  background-color: #ffffff;
+}
+
+.order-btn-container .continue-btn:active {
+  color: #c5c5c5;
+  background-color: #ffffff;
+}
+
+.order-btn-container {
+  display: flex;
+  margin: 0;
+  padding: 0 70px;
+
+  /* background-color: transparent; */
+
+  /* outline: 1px solid red; */
+}
+
+
+.element-active {
+  display: block;
+
+  transform: translate(-50%);
+  animation: open-popup 0.2s;
 }
