@@ -10,7 +10,7 @@ body {
   color: #283136;
 
   background-color: #ffffff;
-  /* background-image: url("../img/catalog-modal.jpg"); */
+  /* background-image: url("../img/catalog.jpg"); */
   background-repeat: no-repeat;
   background-position-x: center;
 }
@@ -980,7 +980,7 @@ input[type="radio"].visually-hidden {
 
   width: 218px;
   height: 88px;
-  padding: 40px 0;
+  padding: 43px 0;
 
   font-family: "Cuprum", Arial, sans-serif;
 
@@ -1002,8 +1002,9 @@ input[type="radio"].visually-hidden {
   display: block;
   width: 135px;
   margin: 0 auto;
-  margin-bottom: 7px;
+  margin-bottom: 11px;
   padding: 10px 0;
+  padding-bottom: 7px;
 
   color: #ffffff;
   font-size: 14px;
@@ -1036,7 +1037,7 @@ input[type="radio"].visually-hidden {
 }
 
 .popular-actions .popular-actions-book {
-  width: 129px;
+  padding-top: 8px;
 
   color: #32425c;
 
