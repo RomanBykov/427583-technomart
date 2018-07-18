@@ -1,9 +1,10 @@
 'use strict';
 
 var pageBody = document.querySelector('body');
-var modalContacts = document.querySelector('.modal-contacts');
-var openContactsButton = document.querySelector('.contacts-btn');
-var closeContactsButton = document.querySelector('.close-contacts-btn');
+var modalContacts = pageBody.querySelector('.modal-contacts');
+var openContactsButton = pageBody.querySelector('.contacts-btn');
+var buyButton = pageBody.querySelector('.popular-actions-buy');
+var modalOrder = pageBody.querySelector('.modal-order');
 var slideButtonActive = 'services-btn-active';
 var slideActive = 'slide-active';
 var elementActive = 'element-active';
@@ -21,31 +22,32 @@ var changeSlide = function (slideButton, slideName) {
   })
 };
 
-if (document.querySelector('.modal-map')) {
-  var modalMap = document.querySelector('.modal-map');
-  var openMapButton = document.querySelector('.map-btn');
-  var closeMapButton = modalMap.querySelector('.close-map-btn');
+var closeModal = function (item) {
+  if (item.classList.contains(elementActive)) {
+    item.classList.remove(elementActive);
+  }
+}
 
-  closeMapButton.addEventListener('click', function() {
-    modalMap.classList.remove(elementActive);
-  });
+var closeExistModal = function() {
+  if (pageBody.querySelector('.modal-contacts')) {
+    closeModal(modalContacts);
+  }
+  if (pageBody.querySelector('.modal-map')) {
+    closeModal(modalMap);
+  }
+}
+
+if (pageBody.querySelector('.modal-map')) {
+  var modalMap = pageBody.querySelector('.modal-map');
+  var openMapButton = pageBody.querySelector('.map-btn');
 
   openMapButton.addEventListener('click', function() {
     modalMap.classList.add(elementActive);
   });
-
-  window.addEventListener('keydown', function(evt) {
-    if (evt.keyCode === keyCodes.ESC) {
-      evt.preventDefault();
-      if (modalMap.classList.contains(elementActive)) {
-        modalMap.classList.remove(elementActive);
-      }
-    }
-  });
 }
 
-if (document.querySelector('.services-slides')) {
-  var servicesSlides = document.querySelector('.services-slides');
+if (pageBody.querySelector('.services-slides')) {
+  var servicesSlides = pageBody.querySelector('.services-slides');
   var slideButtonOne = servicesSlides.querySelector('#slide-1');
   var slideButtonTwo = servicesSlides.querySelector('#slide-2');
   var slideButtonThree = servicesSlides.querySelector('#slide-3');
@@ -69,26 +71,40 @@ if (document.querySelector('.services-slides')) {
   changeSlide(slideButtonThree, servicesSlideThree);
 }
 
-closeContactsButton.addEventListener('click', function() {
-  modalContacts.classList.remove(elementActive);
-});
+if (pageBody.querySelector('.modal-contacts')) {
+  openContactsButton.addEventListener('click', function() {
+    modalContacts.classList.add(elementActive);
+  });
 
-openContactsButton.addEventListener('click', function() {
-  modalContacts.classList.add(elementActive);
+  window.addEventListener('keydown', function(evt) {
+    if (evt.keyCode === keyCodes.ESC) {
+      evt.preventDefault();
+      closeModal(modalContacts);
+    }
+  });
+}
+
+buyButton.addEventListener('click', function () {
+  modalOrder.classList.add(elementActive);
 });
 
 window.addEventListener('keydown', function(evt) {
   if (evt.keyCode === keyCodes.ESC) {
     evt.preventDefault();
-    if (modalContacts.classList.contains(elementActive)) {
-      modalContacts.classList.remove(elementActive);
+    closeModal(modalOrder);
+    if (pageBody.querySelector('.modal-map')) {
+      closeModal(modalMap);
     }
   }
 });
 
 pageBody.addEventListener('click', function(evt) {
   var target = evt.target;
-  if (target.classList.contains('contacts-btn')) {
-    modalContacts.classList.add(elementActive);
+  if (target.classList.contains('popular-actions-buy')) {
+    modalOrder.classList.add(elementActive);
+  }
+  if (target.classList.contains('close-btn')) {
+    closeModal(modalOrder);
+    closeExistModal();
   }
 });
