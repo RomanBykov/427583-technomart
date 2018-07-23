@@ -19,35 +19,55 @@ var changeSlide = function (slideButton, slideName) {
     resetSlider();
     slideButton.classList.add(slideButtonActive);
     slideName.classList.add(slideActive);
-  })
+  });
 };
 
 var closeModal = function (item) {
   if (item.classList.contains(elementActive)) {
     item.classList.remove(elementActive);
   }
-}
+};
 
 var closeExistModal = function() {
-  if (pageBody.querySelector('.modal-contacts')) {
+  if (document.querySelector('.modal-contacts')) {
     closeModal(modalContacts);
   }
-  if (pageBody.querySelector('.modal-map')) {
+  if (document.querySelector('.modal-map')) {
     closeModal(modalMap);
   }
+};
+
+var toggleRadio = function (radioOne, radioTwo) {
+  radioOne.checked = false;
+  radioTwo.checked = true;
+};
+
+if (document.querySelector('.slider')) {
+  var leftButton = document.querySelector('.direction-btn-left');
+  var rightButton = document.querySelector('.direction-btn-right');
+  var leftRadio = document.querySelector('.slider-radio-1');
+  var rightRadio = document.querySelector('.slider-radio-2');
+
+  leftButton.addEventListener('click', function () {
+    toggleRadio(rightRadio, leftRadio);
+  });
+
+  rightButton.addEventListener('click', function () {
+    toggleRadio(leftRadio, rightRadio);
+  });
 }
 
-if (pageBody.querySelector('.modal-map')) {
-  var modalMap = pageBody.querySelector('.modal-map');
-  var openMapButton = pageBody.querySelector('.map-btn');
+if (document.querySelector('.modal-map')) {
+  var modalMap = document.querySelector('.modal-map');
+  var openMapButton = document.querySelector('.map-btn');
 
-  openMapButton.addEventListener('click', function() {
+  openMapButton.addEventListener('click', function () {
     modalMap.classList.add(elementActive);
   });
 }
 
-if (pageBody.querySelector('.services-slides')) {
-  var servicesSlides = pageBody.querySelector('.services-slides');
+if (document.querySelector('.services-slides')) {
+  var servicesSlides = document.querySelector('.services-slides');
   var slideButtonOne = servicesSlides.querySelector('#slide-1');
   var slideButtonTwo = servicesSlides.querySelector('#slide-2');
   var slideButtonThree = servicesSlides.querySelector('#slide-3');
@@ -60,7 +80,7 @@ if (pageBody.querySelector('.services-slides')) {
   var resetSlider = function () {
     slideButtons.forEach(function (button) {
       button.classList.remove(slideButtonActive);
-    })
+    });
     slides.forEach(function (slide) {
       slide.classList.remove(slideActive);
     });
@@ -76,7 +96,7 @@ if (pageBody.querySelector('.modal-contacts')) {
     modalContacts.classList.add(elementActive);
   });
 
-  window.addEventListener('keydown', function(evt) {
+  window.addEventListener('keydown', function (evt) {
     if (evt.keyCode === keyCodes.ESC) {
       evt.preventDefault();
       closeModal(modalContacts);
@@ -88,17 +108,17 @@ buyButton.addEventListener('click', function () {
   modalOrder.classList.add(elementActive);
 });
 
-window.addEventListener('keydown', function(evt) {
+window.addEventListener('keydown', function (evt) {
   if (evt.keyCode === keyCodes.ESC) {
     evt.preventDefault();
     closeModal(modalOrder);
-    if (pageBody.querySelector('.modal-map')) {
+    if (document.querySelector('.modal-map')) {
       closeModal(modalMap);
     }
   }
 });
 
-pageBody.addEventListener('click', function(evt) {
+pageBody.addEventListener('click', function (evt) {
   var target = evt.target;
   if (target.classList.contains('popular-actions-buy')) {
     modalOrder.classList.add(elementActive);

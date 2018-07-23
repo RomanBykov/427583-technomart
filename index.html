@@ -5,8 +5,8 @@
     <title>Техномарт. Главная</title>
     <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700&amp;subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
-    <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/normalize-mini.css" rel="stylesheet">
+    <link href="css/style-mini.css" rel="stylesheet">
   </head>
   <body>
     <header class="header">
@@ -106,11 +106,23 @@
           </li>
         </ul>
         <div class="menu-slider slider">
-          <input type="radio" id="btn-1" name="toggle">
-          <input type="radio" id="btn-2" name="toggle" checked>
+          <div class="direction-buttons">
+            <button class="direction-btn direction-btn-left" type="button">
+              <span class="visually-hidden">Слайд влево</span>
+            </button>
+            <button class="direction-btn direction-btn-right" type="button">
+              <span class="visually-hidden">Слайд вправо</span>
+            </button>
+          </div>
+          <input class="slider-radio-1" type="radio" id="btn-1" name="toggle">
+          <input class="slider-radio-2" type="radio" id="btn-2" name="toggle" checked>
           <div class="menu-slider-controls slider-controls">
-            <label for="btn-1"><span class="visually-hidden">Первый слайд</span></label>
-            <label for="btn-2"></label>
+            <label for="btn-1">
+              <span class="visually-hidden">Первый слайд</span>
+            </label>
+            <label for="btn-2">
+              <span class="visually-hidden">Второй слайд</span>
+            </label>
           </div>
           <div class="slider-inner">
             <div class="slider-slides">
@@ -119,28 +131,12 @@
                   <h2>Перфораторы</h2>
                   <p class="slide-perforator">Настоящие мужские игрушки</p>
                 </div>
-                <div class="direction-buttons">
-                  <button class="direction-btn direction-btn-left" type="button">
-                    <span class="visually-hidden">Слайд влево</span>
-                  </button>
-                  <button class="direction-btn direction-btn-right" type="button">
-                    <span class="visually-hidden">Слайд вправо</span>
-                  </button>
-                </div>
                 <a class="menu-slider-open button-link" href="#">Открыть каталог</a>
               </section>
               <section class="menu-slide-drill slide">
                 <div class="menu-slider-header">
                   <h2>Дрели</h2>
                   <p>Соседям на радость!</p>
-                </div>
-                <div class="direction-buttons">
-                  <button class="direction-btn direction-btn-left" type="button">
-                    <span class="visually-hidden">Слайд влево</span>
-                  </button>
-                  <button class="direction-btn direction-btn-right" type="button">
-                    <span class="visually-hidden">Слайд вправо</span>
-                  </button>
                 </div>
                 <a class="menu-slider-open button-link" href="catalog.html">Открыть каталог</a>
               </section>
@@ -165,6 +161,7 @@
         </div>
         <ul class="popular-list">
           <li class="popular-item" tabindex="0">
+            <div class="sticker"></div>
             <div class="popular-actions">
               <button class="popular-actions-buy" type="button">Купить</button>
               <button class="popular-actions-book" type="button">В закладки</button>
@@ -177,6 +174,7 @@
             <p class="popular-price-new">25500 Р.</p>
           </li>
           <li class="popular-item" tabindex="0">
+            <div class="sticker"></div>
             <div class="popular-actions">
               <button class="popular-actions-buy" type="button">Купить</button>
               <button class="popular-actions-book" type="button">В закладки</button>
@@ -189,6 +187,7 @@
             <p class="popular-price-new">15500 Р.</p>
           </li>
           <li class="popular-item" tabindex="0">
+            <div class="sticker"></div>
             <div class="popular-actions">
               <button class="popular-actions-buy" type="button">Купить</button>
               <button class="popular-actions-book" type="button">В закладки</button>
@@ -201,7 +200,7 @@
             <p class="popular-price-new">25500 Р.</p>
           </li>
           <li class="popular-item" tabindex="0">
-            <div class="sticker-new"></div>
+            <div class="sticker sticker-new"></div>
             <div class="popular-actions">
               <button class="popular-actions-buy" type="button">Купить</button>
               <button class="popular-actions-book" type="button">В закладки</button>
@@ -233,42 +232,42 @@
         <ul class="popular-list">
           <li class="popular-item popular-manufacturer">
             <div class="popular-img manufacturer-logo">
-              <img src="img/brand-bosch.png" width="126" height="37" alt="Производитель Bosch">
+              <img src="img/brand-bosch.png" width="220" height="145" alt="Производитель Bosch">
             </div>
           </li>
           <li class="popular-item popular-manufacturer">
             <div class="popular-img manufacturer-logo">
-              <img src="img/brand-makita.png" width="123" height="40" alt="Производитель Makita">
+              <img src="img/brand-makita.png" width="220" height="145" alt="Производитель Makita">
             </div>
           </li>
           <li class="popular-item popular-manufacturer">
             <div class="popular-img manufacturer-logo">
-              <img src="img/brand-dewalt.png" width="146" height="44" alt="Производитель DeWalt">
+              <img src="img/brand-dewalt.png" width="220" height="145" alt="Производитель DeWalt">
             </div>
           </li>
           <li class="popular-item popular-manufacturer">
             <div class="popular-img manufacturer-logo">
-              <img src="img/brand-interskol.png" width="200" height="88" alt="Производитель Интерскол">
+              <img src="img/brand-interskol.png" width="220" height="145" alt="Производитель Интерскол">
             </div>
           </li>
           <li class="popular-item popular-manufacturer">
               <div class="popular-img manufacturer-logo">
-                <img src="img/brand-hitachi.png" width="169" height="31" alt="Производитель Hitachi">
+                <img src="img/brand-hitachi.png" width="220" height="145" alt="Производитель Hitachi">
               </div>
             </li>
             <li class="popular-item popular-manufacturer">
               <div class="popular-img manufacturer-logo">
-                <img src="img/brand-lg.png" width="121" height="37" alt="Производитель LG">
+                <img src="img/brand-lg.png" width="220" height="145" alt="Производитель LG">
               </div>
             </li>
             <li class="popular-item popular-manufacturer">
               <div class="popular-img manufacturer-logo">
-                <img src="img/brand-aeg.png" width="151" height="96" alt="Производитель AEG">
+                <img src="img/brand-aeg.png" width="220" height="145" alt="Производитель AEG">
               </div>
             </li>
             <li class="popular-item popular-manufacturer">
               <div class="popular-img manufacturer-logo">
-                <img src="img/brand-metabo.png" width="204" height="69" alt="Производитель Metabo">
+                <img src="img/brand-metabo.png" width="220" height="145" alt="Производитель Metabo">
               </div>
             </li>
         </ul>
@@ -326,7 +325,6 @@
               <img src="img/map.jpg" width="300" height="158" alt="Схема проезда: Б. Конюшенная ул., д. 19">
             </button>
             <div class="modal-map">
-              <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.5991043651586!2d30.320894616097!3d59.938794181876254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkxMTg2!5e0!3m2!1sru!2sru!4v1524218232719" width="940" height="446" allowfullscreen></iframe> -->
               <p>
                 <img src="img/map-full.jpg" width="941" height="446" alt="Увеличенная схема проезда: Б. Конюшенная ул., д. 19">
               </p>
@@ -440,6 +438,6 @@
         </div>
       </section>
     </footer>
-    <script src="js/script.js"></script>
+    <script src="js/script-mini.js"></script>
   </body>
 </html>
