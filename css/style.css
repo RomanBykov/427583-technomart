@@ -1,5 +1,5 @@
 body {
-  max-width: 1200px;
+  width: 1200px;
   margin: 0 auto;
   padding: 0;
 
@@ -50,7 +50,7 @@ input[type="radio"].visually-hidden {
 }
 
 .header {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   padding-bottom: 60px;
 
